@@ -1,5 +1,6 @@
 ---
-version: '3'
+version: '3,4'
+project_name: containers
 services:
   uptime-kuma:
     image: louislam/uptime-kuma:1
@@ -70,5 +71,8 @@ services:
 
 volumes:
   uptime-kuma:
+    name: containers_uptime-kuma
   gotify:
+    name: containers_gotify
   healthchecks:
+    name: containers_healthchecks
