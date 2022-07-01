@@ -14,7 +14,7 @@ services:
     restart: always
 
   backup:
-    image: ttionya/vaultwarden-backup:latest
+    image: ttionya/vaultwarden-backup:1.11.0
     container_name: vaultwarden-backup
     environment:
       TIMEZONE: ${TZ}
@@ -39,7 +39,7 @@ services:
     restart: unless-stopped
 
   swag:
-    image: ghcr.io/linuxserver/swag
+    image: ghcr.io/linuxserver/swag:1.28.0-ls135
     container_name: swag
     cap_add:
       - NET_ADMIN
