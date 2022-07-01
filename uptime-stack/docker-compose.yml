@@ -2,14 +2,14 @@
 version: '3.4'
 services:
   uptime-kuma:
-    image: louislam/uptime-kuma:1
+    image: louislam/uptime-kuma:1.16.1
     container_name: uptime-kuma
     volumes:
       - uptime-kuma:/app/data
     restart: always
 
   gotify:
-    image: gotify/server-arm64
+    image: gotify/server-arm64:2.1.4
     container_name: gotify
     environment:
       - TZ=${TZ}
@@ -19,7 +19,7 @@ services:
     restart: always
 
   healthchecks:
-    image: lscr.io/linuxserver/healthchecks:latest
+    image: lscr.io/linuxserver/healthchecks:v2.2.1-ls128
     container_name: healthchecks
     environment:
       - PUID=1000
@@ -46,7 +46,7 @@ services:
     restart: always
 
   swag:
-    image: ghcr.io/linuxserver/swag
+    image: ghcr.io/linuxserver/swag:1.28.0-ls135
     container_name: swag
     cap_add:
       - NET_ADMIN
